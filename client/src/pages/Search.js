@@ -82,7 +82,7 @@ class Search extends Component {
       <Container>
         <Row>
           <div className="col rounded text-center  mt-4 p-4"  >
-            <img src={search_img}/>
+            <img src={search_img} style={{display:'inline',maxWidth:'100%'}}/>
           </div>
         </Row>
         <Row>
