@@ -19,7 +19,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.1",
-    "bcrypt": "^4.0.1",
     "bootswatch": "^4.3.1",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
