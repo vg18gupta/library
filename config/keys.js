@@ -1,5 +1,5 @@
 module.exports = {
-    googleClientID: "348653924741-br3pl65kjru675evlohd9fjdj7o86sla.apps.googleusercontent.com",
-    googleClientSecret: "_98wmUEJOBAdxMg8YU6yeXnR",
+    googleClientID: "84783538307-gr9kqmps5eidkjoc7nukscb5ap2gt3om.apps.googleusercontent.com",
+    googleClientSecret: "qNdzaMN9E7c_ArqPSPxGmnpP",
     mongoURI: "mongodb+srv://vishal:123@cluster0-j0yto.mongodb.net/test?retryWrites=true&w=majority"
 }
