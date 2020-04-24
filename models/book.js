@@ -26,7 +26,7 @@ const bookSchema = new Schema({
   thumbnail: {
     type: String,
     required: true
-  }
+  },
 });
 
 const Book = mongoose.model("Book", bookSchema);
