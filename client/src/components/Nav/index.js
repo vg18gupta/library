@@ -34,7 +34,7 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="nav-link" to="/search">
             Search
@@ -66,7 +66,7 @@ class Navbar extends Component {
     );
 
     const guestLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ">
         {/*<li className="nav-item">
           <a className="nav-link" href="/">
             Login with Google
@@ -81,7 +81,7 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand navbar-dark bg-dark" style={{display:'flex', textAlign:'center'}}>
         <div className="container">
           <Link className="navbar-brand" to="/">
           <img src={icon_img}/>
@@ -94,18 +94,10 @@ class Navbar extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
-
-          <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
-              {/* <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  Developers
-                </Link>
-    </li> */}
-            </ul>
+          <div className="spacer" style={{flex: '1'}}></div>
+          
             {isAuthenticated ? authLinks : guestLinks}
           </div>
-        </div>
       </nav>
     );
   }
