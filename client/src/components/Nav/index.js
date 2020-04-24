@@ -81,7 +81,7 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand navbar-dark bg-dark" style={{display:'flex', textAlign:'center'}}>
+      <nav className="navbar navbar-expand navbar-dark bg-dark mb-4" style={{display:'flex', textAlign:'center'}}>
         <div className="container">
           <Link className="navbar-brand" to="/">
           <img src={icon_img}/>
