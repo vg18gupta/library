@@ -46,9 +46,12 @@ class Saved extends Component {
             {!this.state.savedBooks.length ? (
               <h6 className="text-center">No books to display currently</h6>
             ) : (
+              <div className="container-fluid d-flex justify-container-center">
                 <BookList>
                   {this.state.savedBooks.map(book => {
                     return (
+                      <div className="row" style={{justifyContent:"center", display:"flex", alignItems:"center"}}>
+                      <div className="col-md-6" >
                       <BookListItem
                         key={book.googleId}
                         googleId={book.googleId}
@@ -62,9 +65,12 @@ class Saved extends Component {
                         clickEvent={this.deleteSavedBook}
                         screenWidth={this.state.screenWidth}
                       />
+                      </div>
+                      </div>
                     );
                   })}
                 </BookList>
+              </div>
               )}
           </div>
         </Row>

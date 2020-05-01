@@ -3,7 +3,8 @@ import { Row, Container } from "../components/Grid";
 import Button from "../components/Button";
 import { BookList, BookListItem } from "../components/BookList";
 import API from "../utils/API";
-var search_img = require('../images/search.png');
+import Slider from '../components/Slider/Slider'
+var notfound = require('../img/notfound.png');
 
 class Search extends Component {
 
@@ -81,9 +82,7 @@ class Search extends Component {
     return (
       <Container>
         <Row>
-          <div className="col rounded text-center  mt-4 p-4"  >
-            <img src={search_img} style={{display:'inline',maxWidth:'100%'}}/>
-          </div>
+         <Slider />
         </Row>
         <Row>
           <div className="col rounded bg-info mb-4 mt-4 p-4">
@@ -105,16 +104,22 @@ class Search extends Component {
         <Row>
           <div className="col border border-rounded bg-yellow p-3 mb-4">
             {this.state.searched === "" ? (
-            <h2><b>Results</b></h2>
+            <h2></h2>
             ) : (
-              <h2>Results for {this.state.searched}</h2>
+              <h2><b>Results for {this.state.searched}</b></h2>
             )}
             {!this.state.books.length ? (
-              <h3 className="text-center">No books to display currently</h3>
+              // <h3 className="text-center">No books to display currently</h3>
+              <div className="NotFound" style={{justifyContent:'center',display:'flex'}}>
+              <img src={notfound} style={{width:'50%'}}/>
+              </div>
             ) : (
+              <div className="container-fluid d-flex justify-container-center">
                 <BookList>
                   {this.state.books.map(book => {
                     return (
+                      <div className="row" style={{justifyContent:"center", display:"flex", alignItems:"center"}}>
+                      <div className="col-md-6" >
                       <BookListItem
                         key={book.volumeInfo.infoLink}
                         googleId={book.id}
@@ -130,9 +135,12 @@ class Search extends Component {
                         date={this.checkSavedDate(book.id)}
                         screenWidth={this.state.screenWidth}
                       />
+                      </div>
+                      </div>
                     );
                   })}
                 </BookList>
+                </div>
               )}
           </div>
         </Row>

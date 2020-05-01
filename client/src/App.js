@@ -1,5 +1,8 @@
 import React from "react";
-import 'bootswatch/dist/lumen/bootstrap.min.css'; 
+ import 'bootswatch/dist/lumen/bootstrap.min.css'; 
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+// import "materialize-css/dist/css/materialize.min.css";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Nav from "./components/Nav";
 import Search from "./pages/Search";

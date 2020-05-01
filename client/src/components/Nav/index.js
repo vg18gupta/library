@@ -29,12 +29,13 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 var icon_img = require('../image/rsz_1icon.png');
 
+
 class Navbar extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul className="navbar-nav">
+      <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/search">
             Search
@@ -66,7 +67,7 @@ class Navbar extends Component {
     );
 
     const guestLinks = (
-      <ul className="navbar-nav ">
+      <ul className="navbar-nav ml-auto">
         {/*<li className="nav-item">
           <a className="nav-link" href="/">
             Login with Google
@@ -81,7 +82,7 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand navbar-dark bg-dark mb-4" style={{display:'flex', textAlign:'center'}}>
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4" >
         <div className="container">
           <Link className="navbar-brand" to="/">
           <img src={icon_img}/>
@@ -94,10 +95,13 @@ class Navbar extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="spacer" style={{flex: '1'}}></div>
+          {/* <div className="spacer" style={{flex: '1'}}></div> */}
           
+          <div className="collapse navbar-collapse" id="mobile-nav">
+            
             {isAuthenticated ? authLinks : guestLinks}
           </div>
+        </div>
       </nav>
     );
   }
